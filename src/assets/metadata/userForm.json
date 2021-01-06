@@ -1,0 +1,74 @@
+[
+    {
+      "ID":"FirstName",
+      "Label":"Firts Name",
+      "Type":"input",
+      "Value":"",
+      "Required": "true",
+      "ErrorMessage": "Invalid name"
+    },
+    {
+      "ID":"LastName",
+      "Label":"Last Name",
+      "Type":"input",
+      "Value":"",
+      "Required": "true",
+      "ErrorMessage": "Invalid last name"
+    },
+    {
+      "ID":"DOB",
+      "Label":"DOB",
+      "Type":"date",
+      "Value":"",
+      "Required": "true",
+      "ErrorMessage": "Invalid date"
+
+    },
+  
+    {
+      "ID":"MobileNo",
+      "Label":"Mobile No",
+      "Type":"input",
+      "Value":"",
+      "Required": "true",
+      "ErrorMessage": "Invalid movile number"
+
+    },
+  
+    {
+      "ID":"Email_ID",
+      "Label":"Email",
+      "Type":"input",
+      "Value":"",
+      "Required": "true",
+      "ErrorMessage": "Invalid email"
+    },
+  
+    {
+      "ID":"Gender",
+      "Label":"Gender",
+      "Type":"radio",
+      "Required": "true",
+      "Values":"Male,Female",
+      "ErrorMessage": "Invalid gender"
+    },
+  
+    {
+      "ID":"Adress",
+      "Label":"Adress",
+      "Type":"input",
+      "Value":"",
+      "Required": "true",
+      "ErrorMessage": "Invalid addres"
+    },
+    {
+      "ID":"City",
+      "Label":"City",
+      "Type":"select",
+      "Values":"San Salvador,Santa Ana,Chalatenango,Opico",
+      "Value":"-1",
+      "Required": "true",
+      "ErrorMessage": "Select a valid city"
+    }
+  ]
+  

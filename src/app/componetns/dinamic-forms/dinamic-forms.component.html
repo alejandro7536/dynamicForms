@@ -1,0 +1,93 @@
+<div>
+    <h1 class="text-3xl font-bold text-indigo-500">Formularios dinámicos</h1>
+</div>
+
+<form [formGroup]="registrationForm" (ngSubmit)="save()">
+
+    <div class="px-4 py-5 bg-white sm:p-6">
+        <div class="grid grid-cols-2 gap-6">
+            <div *ngFor="let control of formArray">
+                <div [ngSwitch]="control.Type">
+
+                    <div *ngSwitchCase="'input'">
+                        <div class="col-span-6 sm:col-span-3">
+                            <label [for]="control.Label"
+                                class="block text-sm font-medium text-gray-700">{{control.Label}}</label>
+                            <input
+                                class="mt-1 py-2 px-2 w-full shadow-sm border border-gray-300 focus:border-green-500 rounded-md"
+                                type="text" name="marca" id="marca" [formControlName]="control.ID">
+                            <p class="text-sm text-red-500"
+                                *ngIf="registrationForm.get(control.ID).invalid && registrationForm.get(control.ID).touched">
+                                {{control.ErrorMessage}}</p>
+                        </div>
+                    </div>
+
+                    <div *ngSwitchCase="'radio'">
+                        <fieldset>
+                            <div>
+                                <legend class="text-base font-medium text-gray-900">{{control.Label}}</legend>
+                                <p class="text-sm text-red-500"
+                                    *ngIf="registrationForm.get(control.ID).invalid && registrationForm.get(control.ID).touched">
+                                    {{control.ErrorMessage}}</p>
+                            </div>
+                            <div class="mt-4 inline-flex space-x-4">
+                                <div class="flex flex-row items-center" *ngFor="let val of control.Values.split(',')">
+                                    <input [name]="control.ID" [value]="val" type="radio" [formControlName]="control.ID"
+                                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                    <label for="push_everything" class="ml-3 block text-sm font-medium text-gray-700">
+                                        {{val}}
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div *ngSwitchCase="'select'">
+                        <label [for]="control.ID"
+                            class="block text-sm font-medium text-gray-700">{{control.Label}}</label>
+                        <select [id]="control.ID" [name]="control.ID" [formControlName]="control.ID"
+                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <option value="-1" disabled>Select a {{control.Label}} </option>
+                            <option *ngFor="let val of control.Values.split(',')" value="{{val}}"> {{val}} </option>
+                        </select>
+                        <p class="text-sm text-red-500"
+                            *ngIf="registrationForm.get(control.ID).value == '-1' && registrationForm.get(control.ID).touched">
+                            {{control.ErrorMessage}}</p>
+                    </div>
+
+                    <!-- datepickers -->
+                    <div *ngSwitchCase="'date'">
+                        <div class="col-span-6 sm:col-span-3">
+                            <label [for]="control.Label"
+                                class="block text-sm font-medium text-gray-700">{{control.Label}}</label>
+                            <input
+                                class="mt-1 py-2 px-2 w-full shadow-sm border border-gray-300 focus:border-green-500 rounded-md"
+                                type="date" name="marca" id="marca" [formControlName]="control.ID">
+                            <p class="text-sm text-red-500"
+                                *ngIf="registrationForm.get(control.ID).invalid && registrationForm.get(control.ID).touched">
+                                {{control.ErrorMessage}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+        <button type="submit"
+            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Save
+        </button>
+    </div>
+</form>
+
+
+<div class="my-5">
+
+    <p *ngIf="registrationForm.invalid"  class="text-red-500 font-bold text-xl">Invalid form</p>
+    <p *ngIf="registrationForm.valid"  class="text-green-500 font-bold text-xl">Valid form</p>
+
+    <p>Values</p>
+    {{registrationForm.value | json}}
+</div>
