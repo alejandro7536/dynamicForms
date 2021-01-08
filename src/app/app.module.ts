@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { DinamicFormsComponent } from './componetns/dinamic-forms/dinamic-forms.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FloydComponent } from './componetns/floyd/floyd.component';
+import { SaveDirective } from './directives/save.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DinamicFormsComponent,
-    FloydComponent
+    FloydComponent,
+    SaveDirective
   ],
   imports: [
     BrowserModule,

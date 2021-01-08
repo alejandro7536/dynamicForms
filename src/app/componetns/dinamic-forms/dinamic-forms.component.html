@@ -13,9 +13,9 @@
                         <div class="col-span-6 sm:col-span-3">
                             <label [for]="control.Label"
                                 class="block text-sm font-medium text-gray-700">{{control.Label}}</label>
-                            <input
+                            <input appSave
                                 class="mt-1 py-2 px-2 w-full shadow-sm border border-gray-300 focus:border-green-500 rounded-md"
-                                type="text" name="marca" id="marca" [formControlName]="control.ID">
+                                type="text" [name]="control.ID" [id]="control.ID" [formControlName]="control.ID">
                             <p class="text-sm text-red-500"
                                 *ngIf="registrationForm.get(control.ID).invalid && registrationForm.get(control.ID).touched">
                                 {{control.ErrorMessage}}</p>

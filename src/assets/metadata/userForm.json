@@ -5,7 +5,8 @@
       "Type":"input",
       "Value":"",
       "Required": "true",
-      "ErrorMessage": "Invalid name"
+      "ErrorMessage": "Invalid name",
+      "updateOn": "submit"
     },
     {
       "ID":"LastName",
@@ -13,7 +14,8 @@
       "Type":"input",
       "Value":"",
       "Required": "true",
-      "ErrorMessage": "Invalid last name"
+      "ErrorMessage": "Invalid last name",
+      "updateOn": "blur"
     },
     {
       "ID":"DOB",
@@ -21,7 +23,8 @@
       "Type":"date",
       "Value":"",
       "Required": "true",
-      "ErrorMessage": "Invalid date"
+      "ErrorMessage": "Invalid date",
+      "updateOn": "change"
 
     },
   
@@ -31,7 +34,8 @@
       "Type":"input",
       "Value":"",
       "Required": "true",
-      "ErrorMessage": "Invalid movile number"
+      "ErrorMessage": "Invalid movile number",
+      "updateOn": "change"
 
     },
   
@@ -41,7 +45,8 @@
       "Type":"input",
       "Value":"",
       "Required": "true",
-      "ErrorMessage": "Invalid email"
+      "ErrorMessage": "Invalid email",
+      "updateOn": "blur"
     },
   
     {
@@ -50,7 +55,8 @@
       "Type":"radio",
       "Required": "true",
       "Values":"Male,Female",
-      "ErrorMessage": "Invalid gender"
+      "ErrorMessage": "Invalid gender",
+      "updateOn": "blur"
     },
   
     {
@@ -59,7 +65,8 @@
       "Type":"input",
       "Value":"",
       "Required": "true",
-      "ErrorMessage": "Invalid addres"
+      "ErrorMessage": "Invalid addres",
+      "updateOn": "blur"
     },
     {
       "ID":"City",
@@ -68,7 +75,8 @@
       "Values":"San Salvador,Santa Ana,Chalatenango,Opico",
       "Value":"-1",
       "Required": "true",
-      "ErrorMessage": "Select a valid city"
+      "ErrorMessage": "Select a valid city",
+      "updateOn": "blur"
     }
   ]
   
