@@ -14,8 +14,9 @@ export class SaveDirective {
   }
 
   @HostListener('change') cambio() {
-    console.info('Cambio el valor del input ', this.el.nativeElement.id, ' a ' , this.el.nativeElement.value);
-    this.dinamicFormsComponent.registrationForm.get(this.el.nativeElement.id).setValue(this.el.nativeElement.value); 
+    console.info('Cambió el valor del input ', this.el.nativeElement.id, ' a ' , this.el.nativeElement.value);
+    this.dinamicFormsComponent.registrationForm.get(this.el.nativeElement.id).setValue(this.el.nativeElement.value);
+
     this.dinamicFormsComponent.save();
   }
   

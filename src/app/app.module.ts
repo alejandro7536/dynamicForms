@@ -8,13 +8,15 @@ import { DinamicFormsComponent } from './componetns/dinamic-forms/dinamic-forms.
 import { ReactiveFormsModule } from '@angular/forms';
 import { FloydComponent } from './componetns/floyd/floyd.component';
 import { SaveDirective } from './directives/save.directive';
+import { CustomInputComponent } from './componetns/custom-input/custom-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DinamicFormsComponent,
     FloydComponent,
-    SaveDirective
+    SaveDirective,
+    CustomInputComponent
   ],
   imports: [
     BrowserModule,

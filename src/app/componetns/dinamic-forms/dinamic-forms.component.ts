@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnInit, forwardRef } from '@angular/core';
+import { Component, OnInit, forwardRef } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, NG_VALIDATORS, ValidationErrors, Validator, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -55,9 +55,13 @@ export class DinamicFormsComponent implements OnInit, ControlValueAccessor, Vali
   setDisabledState?(isDisabled: boolean): void {
     isDisabled ? this.registrationForm.disable() : this.registrationForm.enable();
   }
-  
-  
 
+  validate(c: AbstractControl): ValidationErrors | null{
+    console.log("Validation from acces", c);
+    return this.registrationForm.valid ? null : { invalidForm: {valid: false, message: "form fields are invalid"}};
+  }
+ 
+  
   ngOnInit(): void {
 
     this.registrationForm = this.fb.group({});
@@ -91,10 +95,6 @@ export class DinamicFormsComponent implements OnInit, ControlValueAccessor, Vali
 
   }
 
-  validate(c: AbstractControl): ValidationErrors | null{
-    console.log("Validation from acces", c);
-    return this.registrationForm.valid ? null : { invalidForm: {valid: false, message: "form fields are invalid"}};
-  }
 
 
 
